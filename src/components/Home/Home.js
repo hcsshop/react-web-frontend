@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Layout, Row, Col, Typography, Skeleton } from 'antd'
+import { Layout, Row, Col, Typography, Skeleton, List } from 'antd'
 import { AuditOutlined, CalendarOutlined, BarsOutlined, UserAddOutlined } from '@ant-design/icons'
 
 import TopNav from '../TopNav/TopNav'
@@ -99,6 +99,15 @@ const Home = () => {
               </div>
           }
 
+          {
+            appointments && appointments.length === 0 &&
+              <List
+                size='small'
+                header={<strong>All caught up!</strong>}
+                bordered
+              />
+          }
+
           <div style={{ height: '2em', margin: '2em', borderTop: '1px solid #888' }} />
 
           <Title style={{ fontSize: '2em' }}>
@@ -123,6 +132,15 @@ const Home = () => {
                   }
                 </Row>
               </div>
+          }
+
+          {
+            orders && orders.length === 0 &&
+              <List
+                size='small'
+                header={<strong>All caught up!</strong>}
+                bordered
+              />
           }
         </Layout>
       </Layout>
