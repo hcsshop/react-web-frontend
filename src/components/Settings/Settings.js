@@ -231,6 +231,8 @@ const Settings = () => {
                             }
                             renderItem={setting => {
                               const actions = []
+                              const settingStyle = {}
+                              if (setting.text && setting.text === '') settingStyle.minWidth = setting.text.length > 50 ? 50 : `${setting.text.length}ch`
 
                               switch (setting.type) {
                                 case 'boolean':
@@ -248,7 +250,7 @@ const Settings = () => {
                                       onChange={updateSetting}
                                       data-key={setting.key}
                                       data-type={setting.type}
-                                      style={setting.text && { minWidth: `${setting.text.length > 50 ? 50 : setting.text.length}ch` }}
+                                      style={settingStyle}
                                     />
                                   ))
                                   break

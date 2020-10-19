@@ -77,7 +77,7 @@ const Login = () => {
         }
 
         <Button block type='primary' size='large' htmlType='submit'>
-          Login
+          Let's get to work!
         </Button>
       </Form>
 
