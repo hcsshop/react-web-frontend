@@ -82,8 +82,8 @@ const NewCustomer = () => {
       let qbResult
       const result = await client.service('customers').create(customer)
       const qbEnabled = await client.service('settings').get('quickbooks.enabled')
-      if (qbEnabled) qbResult = await client.service('quickbooks').create({ type: 'customer', customer: result })
-      if (qbEnabled && !qbResult) throw new Error('Did not get a result from quickbooks')
+      if (qbEnabled.enabled) qbResult = await client.service('quickbooks').create({ type: 'customer', customer: result })
+      if (qbEnabled.enabled && !qbResult) throw new Error('Did not get a result from quickbooks')
       localStorage.removeItem('customers')
       setIsLoading(false)
       history.replace(`/customers/view/${result.uuid}`)
