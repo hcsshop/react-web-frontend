@@ -82,8 +82,8 @@ const NewCustomer = () => {
       let qbResult
       const result = await client.service('customers').create(customer)
       const qbEnabled = await client.service('settings').get('quickbooks.enabled')
-      if (qbEnabled) qbResult = await client.service('quickbooks').create({ type: 'customer', customer: result })
-      if (qbEnabled && !qbResult) throw new Error('Did not get a result from quickbooks')
+      if (qbEnabled.enabled) qbResult = await client.service('quickbooks').create({ type: 'customer', customer: result })
+      if (qbEnabled.enabled && !qbResult) throw new Error('Did not get a result from quickbooks')
       localStorage.removeItem('customers')
       setIsLoading(false)
       history.replace(`/customers/view/${result.uuid}`)
@@ -254,9 +254,10 @@ const NewCustomer = () => {
                     </Col>
                   </Row>
 
-                  <h6>Phone</h6>
                   <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Primary Phone</h6>
+
                       <Form.Item>
                         <PhoneInput
                           name='phonePrimary'
@@ -271,6 +272,8 @@ const NewCustomer = () => {
                       </Form.Item>
                     </Col>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Mobile Phone</h6>
+
                       <PhoneInput
                         name='phoneMobile'
                         preferredCountries={['ca', 'gb', 'us']}
@@ -281,6 +284,8 @@ const NewCustomer = () => {
                       />
                     </Col>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Fax Phone</h6>
+
                       <PhoneInput
                         name='phoneFax'
                         preferredCountries={['ca', 'gb', 'us']}
