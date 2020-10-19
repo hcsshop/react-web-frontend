@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Layout, Breadcrumb, Row, Col, Typography, Skeleton } from 'antd'
+import { Layout, Row, Col, Typography, Skeleton } from 'antd'
 import { AuditOutlined, CalendarOutlined, BarsOutlined, UserAddOutlined } from '@ant-design/icons'
 
 import TopNav from '../TopNav/TopNav'
@@ -74,11 +74,6 @@ const Home = () => {
         {window.innerWidth > 800 && <Sidebar actions={sidebarActions} />}
 
         <Layout style={{ padding: '24px 24px 24px', minHeight: '100vh' }}>
-          {/* <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>{process.env.REACT_APP_SERVICESHOP_NAME || 'Home'}</Breadcrumb.Item>
-            <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-          </Breadcrumb> */}
-
           <Title style={{ fontSize: '2em' }}>
             <CalendarOutlined className='heading-icon' />
             Upcoming Appointments
