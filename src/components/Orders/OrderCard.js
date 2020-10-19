@@ -904,7 +904,7 @@ const OrderCard = props => {
                             style={{ width: '25%', textAlign: 'center' }}
                             onClick={() => openLightbox(photo.uuid)}
                           >
-                            <img alt='Intake condition' src={photo.data.uri} style={{ width: '100%', position: 'relative', zIndex: 100000 }} />
+                            <img alt='Intake condition' src={photo.datauri || (photo.data && photo.data.uri)} style={{ width: '100%', position: 'relative', zIndex: 100000 }} />
                           </Card.Grid>
                         )
                       })
