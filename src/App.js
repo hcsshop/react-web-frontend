@@ -115,8 +115,15 @@ const App = props => {
       if (!state.authorized) return false
       runNumber++
 
+      let qbEnabled = { enabled: false }
+
       try {
-        const qbEnabled = await client.service('settings').get('quickbooks.enabled')
+        qbEnabled = await client.service('settings').get('quickbooks.enabled')
+      } catch (err) {
+        console.warn(err)
+      }
+
+      try {
         if (qbEnabled.enabled) {
           const isActive = await client.service('intuit').get('isActive')
           if (!isActive) throw NotFound
