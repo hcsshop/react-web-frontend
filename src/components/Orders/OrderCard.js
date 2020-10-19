@@ -432,14 +432,14 @@ const OrderCard = props => {
     setOrder(result)
   }
 
-  const approvePart = async (uuid) => {
-    const partIndex = order.parts.findIndex(p => p.uuid === uuid)
-    const parts = [...order.parts]
-    parts[partIndex].approved = true
-    const result = await client.service('orders').patch(order.uuid, { parts })
-    console.log({ result })
-    setOrder(result)
-  }
+  // const approvePart = async (uuid) => {
+  //   const partIndex = order.parts.findIndex(p => p.uuid === uuid)
+  //   const parts = [...order.parts]
+  //   parts[partIndex].approved = true
+  //   const result = await client.service('orders').patch(order.uuid, { parts })
+  //   console.log({ result })
+  //   setOrder(result)
+  // }
 
   const updateOrderNotes = async value => {
     setOrderNotes(value)
@@ -492,7 +492,7 @@ const OrderCard = props => {
       <Modal
         title={<h4>Add New Event</h4>}
         visible={showEventDialog}
-        onCancel={() => { setTimerData(null); setShowEventDialog(false); }}
+        onCancel={() => { setTimerData(null); setShowEventDialog(false) }}
         onOk={saveNewEvent}
       >
         {

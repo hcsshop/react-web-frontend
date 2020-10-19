@@ -63,7 +63,7 @@ const TopNav = () => {
   useEffect(() => {
     if (showQrScanner) playScanning()
     if (!showQrScanner) clearInterval(pingQrInterval)
-  }, [showQrScanner, playScanning])
+  }, [showQrScanner, playScanning, pingQrInterval])
 
   // useEffect(() => {
   //   console.log({ transcript, support: SpeechRecognition.browserSupportsSpeechRecognition() })
@@ -146,7 +146,7 @@ const TopNav = () => {
           style={{ marginRight: '4.5em', fontSize: '2em', position: 'relative', left: '2.1em' }}
           className='animate__animated animate__pulse animate__infinite animate__slow'
         >
-          <img className='navbar-brand-logo' src={navbarLogo} />
+          <img alt='' className='navbar-brand-logo' src={navbarLogo} />
         </Navbar.Brand>
 
         <span onClick={openQRScanner} title='Open QR Scanner'>
