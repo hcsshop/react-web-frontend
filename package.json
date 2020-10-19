@@ -1,0 +1,108 @@
+{
+  "name": "@openrepairshop/react-frontend",
+  "homepage": "/",
+  "version": "0.1.0",
+  "main": "server.js",
+  "proxy": "http://10.0.0.111:3030",
+  "--proxy-comment": "This value is so that I can test more easily in my own environment. Change to suit.",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:watch": "nodemon --watch src --exec \"react-scripts build\"",
+    "test": "standard && react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.1",
+    "@feathersjs/authentication-client": "^4.5.4",
+    "@feathersjs/client": "^4.5.4",
+    "@fullcalendar/core": "^4.4.2",
+    "@fullcalendar/daygrid": "^4.4.2",
+    "@fullcalendar/react": "^4.4.2",
+    "@fullcalendar/timegrid": "^4.4.2",
+    "@fullcalendar/timeline": "^4.4.2",
+    "@react-pdf/renderer": "^1.6.10",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "animate.css": "^4.1.0",
+    "antd": "^4.3.0",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.5.0",
+    "crypto-js": "^4.0.0",
+    "cryptojs": "^2.5.3",
+    "express-validator": "^6.5.0",
+    "faker": "^4.1.0",
+    "git": "^0.1.5",
+    "html-react-parser": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "moment": "^2.26.0",
+    "node-sass": "^4.14.1",
+    "parse-address": "^1.1.2",
+    "pdfmake": "^0.1.68",
+    "primus-client": "^7.3.4",
+    "prismjs": "^1.20.0",
+    "react": "^16.13.1",
+    "react-autosuggest": "^10.0.2",
+    "react-bootstrap": "^1.0.1",
+    "react-compound-timer": "^1.2.0",
+    "react-countdown": "^2.2.1",
+    "react-data-table-component": "^6.9.3",
+    "react-dom": "^16.13.1",
+    "react-google-login": "^5.1.20",
+    "react-google-maps": "^9.4.5",
+    "react-helmet": "^6.0.0",
+    "react-html5-camera-photo": "^1.5.4",
+    "react-image-lightbox": "^5.1.1",
+    "react-markdown": "^4.3.1",
+    "react-mde": "^10.2.1",
+    "react-particles-js": "^3.3.0",
+    "react-phone-input-2": "^2.13.7",
+    "react-phone-number-input": "^3.0.24",
+    "react-places-autocomplete": "^7.2.1",
+    "react-qr-code": "^1.0.2",
+    "react-qr-reader": "^2.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-simple-code-editor": "^0.11.0",
+    "react-speech-recognition": "^3.0.2",
+    "react-stepzilla": "^6.0.2",
+    "react-to-pdf": "^0.0.11",
+    "rich-markdown-editor": "^10.5.0-0",
+    "styled-components": "^5.1.1",
+    "terminal-in-react": "^4.3.1",
+    "use-sound": "^1.0.2",
+    "usefeathers": "^1.0.3",
+    "uuid": "^8.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "standard-react"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "standard": "^14.3.4"
+  },
+  "release": {
+    "analyzeCommits": "simple-commit-message"
+  }
+}

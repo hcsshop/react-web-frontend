@@ -1,0 +1,512 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
+// The styling of the application WILL be cleaned up and modularized.
+// This is just better for me during early development. Mi scusi!
+
+#system-notice {
+  width: 100%;
+  border: 1px solid red;
+  color: white;
+  background: #c00;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.pdf-wrapper {
+  display: none;
+}
+
+.particles-canvas {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.react-html5-camera-photo {
+  z-index: 100000;
+}
+
+#loading-screen, #login-screen {
+  .loading-screen-outer, .login-screen-outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .loading-screen-middle, .login-screen-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .loading-screen-inner, .login-screen-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    .loader-icon {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      font-size: 12em;
+      color: #444;
+    }
+
+    .loader-text {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 100%;
+      font-size: 2em;
+    }
+
+    .login-card {
+      margin: auto;
+      margin-top: 0;
+      border-color: #ddd;
+      border-radius: 10px;
+
+      @mixin small-login-card { width: 90%; }
+      @mixin medium-login-card { width: 60%; }
+      @mixin large-login-card { width: 40%; }
+    
+      /* Smartphones (portrait and landscape) ----------- */
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { @include small-login-card }
+      /* iPads (portrait and landscape) ----------- */
+      @media only screen and (min-device-width : 481px) and (max-device-width : 1023px) { @include medium-login-card }
+      /* Desktops and laptops ----------- */
+      @media only screen  and (min-width : 1024px) { @include large-login-card }
+    }
+  }
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.qr-activate-icon {
+  cursor: pointer;
+  color: white !important;
+  font-size: 1.75em !important;
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 991px) {
+  .qr-activate-icon {
+    position: absolute;
+    right: 2.5em;
+    top: 0.9em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .qr-activate-icon {
+    position: relative;
+    top: 0.1em;
+  }
+}
+
+.navbar-brand-logo {
+  filter: invert(1);
+  cursor: pointer;
+  min-width: 50px;
+  max-height: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-brand {
+    left: 0px !important;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1165px) {
+  .nav-link-text, .navbar-divider {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  aside.ant-layout-sider {
+    display: none;
+  }
+}
+
+.topnav-title {
+  color: white;
+  font-size: 2.5em;
+  width: 4.3em;
+  float: left;
+}
+
+.topnav-user-menu {
+  color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.5em;
+
+  span.ant-dropdown-trigger {
+    cursor: pointer;
+  }
+}
+
+.ant-dropdown {
+  width: 12em;
+}
+
+.dialog-page-title {
+  cursor: default;
+  color: #444;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0;
+  font-size: 6em;
+  font-weight: bolder;
+  text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0, #aaa 0 5px 0,rgba(0,0,0,.1) 0 6px 1px, rgba(0,0,0,.1) 0 0 5px, rgba(0,0,0,.3) 0 1px 3px, rgba(0,0,0,.15) 0 3px 5px, rgba(0,0,0,.2) 0 5px 10px, rgba(0,0,0,.2) 0 10px 10px, rgba(0,0,0,.1) 0 20px 20px;
+
+  @mixin small-title { font-size: 2em; }
+  @mixin medium-title { font-size: 4em; }
+  @mixin large-title { font-size: 6em; }
+
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { @include small-title }
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 481px) and (max-device-width : 1023px) { @include medium-title }
+  /* Desktops and laptops ----------- */
+  @media only screen  and (min-width : 1024px) { @include large-title }
+}
+
+.navbar-divider {
+  margin-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid silver;
+}
+
+.dashboard-grid-cell {
+  text-align: center;
+  background-color: #ddd;
+  padding: 1em;
+}
+
+.ant-dropdown {
+  z-index: 900000 !important;
+}
+
+.heading-icon {
+  position: relative;
+  top: -0.25em;
+  margin-right: 0.5em;
+}
+
+.page-header-toolbar {
+  width: 2em;
+}
+
+.mono {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.transform-upper {
+  text-transform: uppercase;
+}
+
+.dashboard-card {
+  @media screen and (max-width: 995px) {
+    .dashboard-card-title {
+      padding-bottom: 2em;
+    }
+
+    .ant-card-extra {
+      position: absolute;
+      left: 1.8em;
+      top: 2.2em;
+    }
+  }
+}
+
+// .customer-card {
+//   @media screen and (max-width: 800px) {
+    // .ant-page-header-heading-title {
+    //   min-width: 100%;
+    //   height: 1em;
+    // }
+
+    // .ant-card-extra {
+    //   position: absolute;
+    //   left: 5em;
+    //   top: 6em;
+    //   float: none;
+    //   margin-left: 0;
+    // }
+//   }
+// }
+
+.customer-card, .order-card {
+  .anticon-copy {
+    position: relative;
+    top: -5px;
+  }
+
+  .disabled__ant-timeline-item-content {
+    table {
+      font-family: "Times New Roman", Times, serif;
+      border: 1px solid #FFFFFF;
+      width: 350px;
+      height: 200px;
+      text-align: center;
+      border-collapse: collapse;
+      margin-left: auto;
+    }
+
+    table td, table th {
+      border: 1px solid #FFFFFF;
+      padding: 3px 2px;
+    }
+
+    table tbody td {
+      font-size: 13px;
+    }
+
+    table tr:nth-child(even) {
+      background: #D0E4F5;
+    }
+
+    table thead {
+      background: #0B6FA4;
+      border-bottom: 5px solid #FFFFFF;
+    }
+
+    table thead th {
+      font-size: 17px;
+      font-weight: bold;
+      color: #FFFFFF;
+      text-align: center;
+      border-left: 2px solid #FFFFFF;
+    }
+
+    table thead th:first-child {
+      border-left: none;
+    }
+
+    table tfoot {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333333;
+      background: #D0E4F5;
+      border-top: 3px solid #444444;
+    }
+
+    table tfoot td {
+      font-size: 14px;
+    }
+  }
+}
+
+.customer-action-card, .order-action-card {
+  .customer-action-card-grid, .order-action-card-grid {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .customer-action-link, .order-action-link {
+      background: none !important;
+      border: none;
+      padding: 0 !important;
+      color: #069;
+      cursor: pointer;
+      font-size: 1.25em;
+    
+      strong {
+        display: block;
+      }
+    
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        font-size: 0.9em;
+      }
+    }
+
+    .customer-action-icon, .order-action-icon {
+      font-size: 2.5em;
+      margin: 0.25em;
+      cursor: pointer;
+    }
+  }
+}
+
+.danger-link, .danger-link:hover, .danger-link:active, .danger-link:visited { color: #c00; }
+
+.customer-view-panel-header, .customer-view-address-header, .order-view-panel-header {
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .anticon {
+    margin-right: 0.5em;
+    position: relative;
+    top: -5px;
+  }
+}
+
+.customer-view-contact-container,
+.customer-view-address-header { // rename to -container later :/
+  overflow: auto;
+  border:1px solid #ddd;
+  border-radius: 8px;
+  padding: 1em;
+  height: 8em;
+  margin-bottom: 1em;
+
+  font-size: 1.2em;
+
+  .anticon {
+    position: relative;
+    top: -3px;
+    margin-right: 0.25em;
+  }
+}
+
+// .panel-col-equalize-height {
+//   .ant-card {
+//     height: 100%;
+//   }
+// }
+
+.customer-list-action-button {
+  margin-bottom: 1em;
+}
+
+.appointment-qr-code {
+  text-align: center;
+  
+}
+
+.appointment-countdown-timer {
+  text-align: center;
+  font-size: 3em;
+  text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0, #aaa 0 5px 0,rgba(0,0,0,.1) 0 6px 1px, rgba(0,0,0,.1) 0 0 5px, rgba(0,0,0,.3) 0 1px 3px, rgba(0,0,0,.15) 0 3px 5px, rgba(0,0,0,.2) 0 5px 10px, rgba(0,0,0,.2) 0 10px 10px, rgba(0,0,0,.1) 0 20px 20px;
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .countdown {
+    font-size: 1em;
+  }
+}
+
+#appointment-map {
+  width: 100%;
+  height: 500px;
+}
+
+.steps-content {
+  margin: 2em;
+}
+
+.ant-steps-finish-icon {
+  position: relative;
+  top: -3px;
+}
+
+.ant-rate {
+  .ant-rate-star-first, .ant-rate-star-second {
+    color: #444;;
+  }
+}
+
+.order-new-machine-autocomplete-list-item {
+  b {
+    margin: 0 1em;
+  }
+}
+
+.order-statistic {
+  .anticon {
+    position: relative;
+    top: -4px;
+  }
+
+  .ant-statistic-title {
+    font-size: 1.5em;
+  }
+
+  .ant-statistic-content {
+    font-size: 1.25em;
+    margin-bottom: 1.5em;
+  }
+}
+
+.settings-save-icon {
+  font-size: 1.5em;
+  position: relative;
+  top: -3px;
+}
+
+.ProseMirror-widget {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.ReactModal__Overlay {
+  z-index: 200000 !important;
+}
+
+#block-menu-container {
+  z-index: 300000 !important;
+}
+
+.terminal-base {
+  max-width: 100%;
+
+  pre span div {
+    font-size: 1em !important;
+    line-height: 1.15 !important;
+  }
+
+  .terminal-container-wrapper {
+    // .terminal-top-bar {
+    //   display: none;
+    // }
+
+    .terminal-container {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.order-parts-card-grid {
+  width: 25%;
+  text-align: center;
+
+  @mixin small-card { width: 90%; }
+  @mixin medium-card { width: 60%; }
+  @mixin large-card { width: 40%; }
+
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { @include small-card }
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 481px) and (max-device-width : 1023px) { @include medium-card }
+  /* Desktops and laptops ----------- */
+  @media only screen  and (min-width : 1024px) { @include large-card }
+}
+
+.order-timer-countdown {
+  font-size: 0.5rem;
+}
+
+.navbar-brand, .nav-link, .nav-link-text, .qr-activate-icon, .topnav-user-menu, aside.ant-layout-sider {
+  transition: ease all .5s;
+}
