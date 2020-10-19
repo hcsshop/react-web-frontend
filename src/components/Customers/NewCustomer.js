@@ -254,9 +254,10 @@ const NewCustomer = () => {
                     </Col>
                   </Row>
 
-                  <h6>Phone</h6>
                   <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Primary Phone</h6>
+
                       <Form.Item>
                         <PhoneInput
                           name='phonePrimary'
@@ -271,6 +272,8 @@ const NewCustomer = () => {
                       </Form.Item>
                     </Col>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Mobile Phone</h6>
+
                       <PhoneInput
                         name='phoneMobile'
                         preferredCountries={['ca', 'gb', 'us']}
@@ -281,6 +284,8 @@ const NewCustomer = () => {
                       />
                     </Col>
                     <Col className='gutter-row' xs={24} xl={8}>
+                      <h6>Fax Phone</h6>
+
                       <PhoneInput
                         name='phoneFax'
                         preferredCountries={['ca', 'gb', 'us']}
