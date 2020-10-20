@@ -276,7 +276,6 @@ module.exports = class {
         matches.forEach(async match => {
           const customer = convertedCustomers.filter(c => c.quickbooksID === match.quickbooksID)[0]
           convertedCustomers = convertedCustomers.filter(c => c.quickbooksID !== match.quickbooksID)
-          if (match.uuid === 'f67a39cf-f015-4bf3-a9c2-f73e6860fe06') console.log(match.quickbooksID, customer)
           await this.models.Customer.updateOne({ quickbooksID: match.quickbooksID }, { $set: { ...customer } })
         })
 

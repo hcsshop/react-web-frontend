@@ -125,8 +125,10 @@ const App = props => {
 
       try {
         if (qbEnabled.enabled) {
+          console.log('Quickbooks integration is enabled; setting up..')
           const isActive = await client.service('intuit').get('isActive')
-          if (!isActive) throw NotFound
+          if (!isActive) redirectToIntuitAuthUrl()
+          // if (!isActive) throw NotFound
           // Test connection to be sure
           const { CompanyInfo } = await client.service('intuit').get('company')
           // console.log(CompanyInfo)
