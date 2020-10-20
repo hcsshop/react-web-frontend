@@ -213,7 +213,7 @@ const CustomerCard = props => {
               {
                 customerActionButtons.map(action => {
                   return (
-                    <Col key={Math.random().toString(36)} xl={8} lg={8} md={10} sm={12} xs={24} className='customer-action-card-col'>
+                    <Col key={Math.random().toString(36)} xl={8} lg={8} md={10} sm={12} xs={12} className='customer-action-card-col'>
                       <Card.Grid
                         className='customer-action-card-grid'
                       >
