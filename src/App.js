@@ -6,7 +6,7 @@ import { Modal, message } from 'antd'
 import Particles from 'react-particles-js'
 // import GoogleLogin from 'react-google-login'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { NotFound } from '@feathersjs/errors'
+// import { NotFound } from '@feathersjs/errors'
 
 import 'antd/dist/antd.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
