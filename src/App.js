@@ -176,7 +176,7 @@ const App = props => {
         <title>{process.env.REACT_APP_SERVICESHOP_NAME || 'OpenRepairShop'}</title>
       </Helmet>
 
-      {process.env.REACT_APP_SYSTEM_NOTICE && <div id="system-notice">{process.env.REACT_APP_SYSTEM_NOTICE}</div>}
+      {process.env.REACT_APP_SYSTEM_NOTICE && <div id='system-notice'>{process.env.REACT_APP_SYSTEM_NOTICE}</div>}
 
       {
         showParticles &&
