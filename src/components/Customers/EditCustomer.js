@@ -176,9 +176,9 @@ const EditCustomer = () => {
     })
 
     if (customer.profile.phone) {
-      if (customer.profile.phone.primary.number) setPrimaryPhone(customer.profile.phone.primary.number)
-      if (customer.profile.phone.mobile.number) setMobilePhone(customer.profile.phone.mobile.number)
-      if (customer.profile.phone.fax.number) setFaxPhone(customer.profile.phone.fax.number)
+      if (customer.profile.phone.primary && customer.profile.phone.primary.number) setPrimaryPhone(customer.profile.phone.primary.number)
+      if (customer.profile.phone.mobile && customer.profile.phone.mobile.number) setMobilePhone(customer.profile.phone.mobile.number)
+      if (customer.profile.phone.fax && customer.profile.phone.fax.number) setFaxPhone(customer.profile.phone.fax.number)
     }
 
     setDisplayName(customer.profile.name.display)
@@ -287,29 +287,44 @@ const EditCustomer = () => {
                     </Col>
                   </Row>
 
-                  <h6>Phone</h6>
                   <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col className='gutter-row' xs={24} xl={8}>
-                      <PhoneInput
-                        preferredCountries={['ca', 'gb', 'us']}
-                        country={process.env.REACT_APP_SERVICESHOP_PHONE_COUNTRY || 'us'}
-                        value={primaryPhone || ''}
-                        onChange={setPrimaryPhone}
-                      />
+                      <h6>Primary Phone</h6>
+
+                      <Form.Item>
+                        <PhoneInput
+                          name='phonePrimary'
+                          preferredCountries={['ca', 'gb', 'us']}
+                          country={process.env.REACT_APP_SERVICESHOP_PHONE_COUNTRY || 'us'}
+                          value={primaryPhone}
+                          // onChange={handlePrimaryPhoneChange}
+                          onChange={setPrimaryPhone}
+                          enableAreaCodes={['us', 'ca']}
+                          enableAreaCodeStretch
+                        />
+                      </Form.Item>
                     </Col>
-                    <Col className='gutter-row' xs={24} xl={8}>
+                    <Col className='gutter-row mb-2' xs={24} xl={8}>
+                      <h6>Mobile Phone</h6>
+
                       <PhoneInput
+                        name='phoneMobile'
                         preferredCountries={['ca', 'gb', 'us']}
                         country={process.env.REACT_APP_SERVICESHOP_PHONE_COUNTRY || 'us'}
-                        value={mobilePhone || ''}
+                        value={mobilePhone}
+                        // onChange={handleMobilePhoneChange}
                         onChange={setMobilePhone}
                       />
                     </Col>
-                    <Col className='gutter-row' xs={24} xl={8}>
+                    <Col className='gutter-row mt-2 mb-2' xs={24} xl={8}>
+                      <h6>Fax Phone</h6>
+
                       <PhoneInput
+                        name='phoneFax'
                         preferredCountries={['ca', 'gb', 'us']}
                         country={process.env.REACT_APP_SERVICESHOP_PHONE_COUNTRY || 'us'}
                         value={faxPhone}
+                        // onChange={handleFaxPhoneChange}
                         onChange={setFaxPhone}
                       />
                     </Col>

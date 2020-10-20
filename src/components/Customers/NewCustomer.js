@@ -271,7 +271,7 @@ const NewCustomer = () => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col className='gutter-row' xs={24} xl={8}>
+                    <Col className='gutter-row mb-2' xs={24} xl={8}>
                       <h6>Mobile Phone</h6>
 
                       <PhoneInput
@@ -283,7 +283,7 @@ const NewCustomer = () => {
                         onChange={setMobilePhone}
                       />
                     </Col>
-                    <Col className='gutter-row' xs={24} xl={8}>
+                    <Col className='gutter-row mt-2 mb-2' xs={24} xl={8}>
                       <h6>Fax Phone</h6>
 
                       <PhoneInput

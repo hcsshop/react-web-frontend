@@ -125,14 +125,19 @@ const Customers = () => {
       const filtered = customers.filter(customer => {
         try {
           const splitFilter = filter.split(' ')
-          return (
-            customer.uuid.toString().toUpperCase().includes(...splitFilter) ||
-            (typeof customer.profile.name.first === 'string' && customer.profile.name.first.toUpperCase().includes(...splitFilter)) ||
-            (typeof customer.profile.name.last === 'string' && customer.profile.name.last.toUpperCase().includes(...splitFilter)) ||
-            (typeof customer.profile.company.name === 'string' && customer.profile.company.name.toUpperCase().includes(...splitFilter)) ||
-            (customer.profile.phone && customer.profile.phone.primary.number && customer.profile.phone.primary.number.includes(...splitFilter)) ||
-            (customer.profile.phone && customer.profile.phone.mobile.number && customer.profile.phone.mobile.number.includes(...splitFilter))
-          )
+          try {
+            return (
+              customer.uuid.toString().toUpperCase().includes(...splitFilter) ||
+              (typeof customer.profile.name.first === 'string' && customer.profile.name.first.toUpperCase().includes(...splitFilter)) ||
+              (typeof customer.profile.name.last === 'string' && customer.profile.name.last.toUpperCase().includes(...splitFilter)) ||
+              (typeof customer.profile.company.name === 'string' && customer.profile.company.name.toUpperCase().includes(...splitFilter)) ||
+              (customer.profile.phone.primary && customer.profile.phone.primary.number && customer.profile.phone.primary.number.includes(...splitFilter)) ||
+              (customer.profile.phone.mobile && customer.profile.phone.mobile.number && customer.profile.phone.mobile.number.includes(...splitFilter))
+            )
+          } catch (err) {
+            console.warn(err)
+            return false
+          }
         } catch (err) {
           console.error(err)
           return false
