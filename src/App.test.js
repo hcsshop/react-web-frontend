@@ -6,6 +6,6 @@ import App from './App'
 
 test('renders title element', () => {
   const { getByText } = render(<App />)
-  const titleElement = getByText(/HCSX/i)
+  const titleElement = getByText(/Login/i)
   expect(titleElement).toBeInTheDocument()
 })

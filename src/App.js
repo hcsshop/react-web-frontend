@@ -10,7 +10,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import 'antd/dist/antd.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// Yeah, I included Bootstrap mostly for the navbar. Wanna fight about it?
+// Yeah, I included Bootstrap mostly for the navbar and utility classes. Wanna fight about it?
+// I'll eventually migrate everything to MUI anyway
 
 import { store } from './store'
 import client from './feathers/client'
