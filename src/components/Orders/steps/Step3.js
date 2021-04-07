@@ -116,7 +116,7 @@ export default ({ orderData, updateOrder }) => {
                     <Col className='gutter-row' xs={24} xl={4} style={{ marginBottom: '2em' }}>
                       {/* <Rate tooltips={conditionNames} value={intakeConditions[machine.uuid]} onChange={value => setIntakeConditions({ ...intakeConditions, ...{ [`${machine.uuid}`]: value } })} /> */}
                       {/* Temporary fix */}
-                      <input value={intakeConditions[machine.uuid]} placeholder='0-5' onChange={value => setIntakeConditions({ ...intakeConditions, ...{ [`${machine.uuid}`]: value } })} />
+                      <input value={intakeConditions[machine.uuid]} placeholder='0-5' onChange={e => setIntakeConditions({ ...intakeConditions, ...{ [`${machine.uuid}`]: e.target.value } })} />
                       
                     </Col>
                     <Col className='gutter-row' xs={24} xl={9} style={{ marginBottom: '2em' }}>
